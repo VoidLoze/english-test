@@ -230,7 +230,7 @@
     ['C', 'Every December, my grandmother invites the whole family to her house. We spend the day making dumplings together, and everybody, even the youngest children, has a job. Grandma learned the recipe from her own mother, and she says that one day it will be my turn to teach it.'],
     ['D', 'Anna and her friends meet every Saturday morning in the local park. They collect plastic bottles and other rubbish and take it to a recycling centre. They have also planted more than fifty trees near their school. "It\'s fun, and we can see the results," Anna says.'],
     ['E', "You don't need expensive equipment or a gym to stay fit. In our town, there are free running groups for people of all ages. Some members are teenagers, others are over seventy. Nobody cares how fast you are — the main thing is to come and move."],
-    ['F', 'When I failed my first maths test this year, I was very upset. My teacher told me to look carefully at every wrong answer and understand why it was wrong. I did, and I discovered that I made the same mistakes again and again. My next test was much better.']
+    ['F', 'When I failed my first maths test this year, I was very upset. My teacher told me to look closely at every wrong answer and understand why it was wrong. I did, and I discovered that I made the same mistakes again and again. My next test was much better.']
   ];
   const STATEMENTS = [
     [17, 'Masha was older than Lucy.'],
@@ -250,13 +250,13 @@
     'How much time do you spend online every day?',
     'Do you prefer spending your free time alone or with friends? Why?',
     'What new hobby would you like to try in the future?',
-    'What is the best way for teenagers to relax after school, in your opinion?',
+    'How do you think teenagers should relax after school?',
     'What advice would you give to a student who has no free time at all?'
   ];
   const MONOLOGUE = '<p><b>Give a talk about learning foreign languages.</b></p><p>Remember to say:</p><ul>' +
     '<li>why people learn foreign languages;</li>' +
     '<li>which foreign language (besides English) you would like to learn and why;</li>' +
-    '<li>what, in your opinion, the best way to learn a foreign language is.</li></ul><p>You have to talk continuously.</p>';
+    '<li>how, in your opinion, a foreign language should be learnt.</li></ul><p>You have to talk continuously.</p>';
 
   let state = { name: '', startedAt: null, finishedAt: null, step: 0, a: {}, rec: {} };
   try { const s = JSON.parse(localStorage.getItem(STORE)); if (s) state = Object.assign(state, s); } catch (e) {}
