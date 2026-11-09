@@ -18,22 +18,20 @@
   .steps button:disabled { opacity: .5; cursor: default; }
   .timer { font-variant-numeric: tabular-nums; font-weight: 600; font-size: 15px; white-space: nowrap; }
   .timer.late { color: var(--warn); }
-  .card { background: var(--card); border-radius: 14px; padding: 18px 18px; margin: 14px 0; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+  .card { background: var(--card); border-radius: 14px; padding: 18px; margin: 14px 0; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
   h1 { font-size: 24px; margin: 6px 0 4px; }
   h2 { font-size: 21px; margin: 4px 0 8px; }
   h3 { font-size: 18px; margin: 18px 0 8px; }
   .instr { background: #eef2fb; border-left: 4px solid var(--accent); padding: 10px 12px; border-radius: 6px; font-size: 15px; color: #333b4d; }
   .muted { color: var(--muted); font-size: 14px; }
-  .item { padding: 10px 0; border-bottom: 1px solid #eef0f4; }
+  .item { padding: 12px 0; border-bottom: 1px solid #eef0f4; }
   .item:last-child { border-bottom: none; }
   .num { display: inline-block; min-width: 26px; height: 26px; line-height: 26px; text-align: center; border-radius: 50%; background: #e7ecf8; color: var(--accent); font-weight: 700; font-size: 14px; margin-right: 6px; }
   .base { display: inline-block; font-weight: 700; font-size: 14px; letter-spacing: .5px; background: #fff3d6; color: #8a5a00; padding: 1px 8px; border-radius: 6px; margin-left: 6px; }
-  input[type=text] { font-size: 17px; padding: 5px 8px; border: none; border-bottom: 2px solid #9aa6bf; background: #f8f9fc; border-radius: 4px 4px 0 0; width: 150px; max-width: 100%; color: var(--accent); font-weight: 600; }
-  input[type=text]:focus { outline: none; border-bottom-color: var(--accent); background: #eef2fb; }
-  input.name { width: 100%; border: 1px solid #c9d1e1; border-radius: 8px; padding: 10px 12px; color: var(--text); font-weight: 400; }
-  .btn { display: inline-block; border: none; background: var(--accent); color: #fff; font-size: 17px; padding: 12px 20px; border-radius: 10px; cursor: pointer; margin: 6px 6px 6px 0; text-decoration: none; }
+  .blank { display: inline-block; min-width: 80px; border-bottom: 2px solid #9aa6bf; color: var(--accent); font-weight: 600; text-align: center; padding: 0 4px; }
+  input.name { width: 100%; font-size: 17px; border: 1px solid #c9d1e1; border-radius: 8px; padding: 10px 12px; }
+  .btn { display: inline-block; border: none; background: var(--accent); color: #fff; font-size: 17px; padding: 12px 20px; border-radius: 10px; cursor: pointer; margin: 6px 6px 6px 0; }
   .btn.secondary { background: #e7ecf8; color: var(--accent); }
-  .btn.red { background: var(--warn); }
   .btn.green { background: var(--ok); }
   .btn:disabled { opacity: .5; cursor: default; }
   .nav { display: flex; justify-content: space-between; gap: 8px; margin-top: 10px; }
@@ -41,25 +39,25 @@
   .headings li { padding: 3px 0; }
   .rtext { margin: 12px 0; padding: 12px; background: #fafbfd; border-radius: 10px; border: 1px solid #eef0f4; }
   .rtext .letter { font-weight: 800; color: var(--accent); margin-right: 6px; }
-  .rtext select { margin-top: 8px; }
-  select { font-size: 16px; padding: 6px 8px; border-radius: 8px; border: 1px solid #c9d1e1; background: #fff; max-width: 100%; }
-  .tf { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
-  .tf label { border: 1px solid #c9d1e1; border-radius: 8px; padding: 6px 12px; cursor: pointer; font-size: 15px; user-select: none; }
-  .tf input { display: none; }
-  .tf input:checked + span { color: #fff; }
-  .tf label:has(input:checked) { background: var(--accent); border-color: var(--accent); color: #fff; }
+  select { font-size: 16px; padding: 6px 8px; border-radius: 8px; border: 1px solid #c9d1e1; background: #fff; max-width: 100%; margin-top: 8px; }
+  .chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+  .chips label { border: 1px solid #c9d1e1; border-radius: 8px; padding: 6px 12px; cursor: pointer; font-size: 16px; user-select: none; background: #fff; }
+  .chips input { position: absolute; opacity: 0; pointer-events: none; }
+  .chips label:has(input:checked) { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .chips label:has(input:disabled) { cursor: default; }
   .story p { margin: 10px 0; }
   .speak-box { border: 1px dashed #c9d1e1; border-radius: 10px; padding: 12px; margin-top: 10px; }
   .phase { font-weight: 700; }
   .count { font-size: 34px; font-weight: 700; font-variant-numeric: tabular-nums; }
-  .rec-dot { display: inline-block; width: 12px; height: 12px; background: var(--warn); border-radius: 50%; margin-right: 6px; animation: blink 1s infinite; }
-  @keyframes blink { 50% { opacity: .2; } }
-  .question { font-size: 21px; font-weight: 600; margin: 10px 0; }
   .hidden { display: none !important; }
   .warn { color: var(--warn); }
   .ok { color: var(--ok); }
-  textarea.summary { width: 100%; min-height: 260px; font-family: ui-monospace, Menlo, monospace; font-size: 14px; padding: 10px; border-radius: 8px; border: 1px solid #c9d1e1; }
-  audio { width: 100%; margin-top: 8px; }
+  .score { font-size: 44px; font-weight: 800; color: var(--accent); margin: 4px 0; }
+  table.res { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 15px; }
+  table.res td, table.res th { border-bottom: 1px solid #eef0f4; padding: 6px 4px; text-align: left; vertical-align: top; }
+  table.res th { color: var(--muted); font-weight: 600; }
+  .bad { color: var(--warn); }
+  .good { color: var(--ok); }
 </style>
 </head>
 <body>
@@ -70,7 +68,7 @@
       <button data-step="1">1. Грамматика</button>
       <button data-step="2">2. Чтение</button>
       <button data-step="3">3. Речь</button>
-      <button data-step="4">Финиш</button>
+      <button data-step="4">Результат</button>
     </div>
     <div class="timer" id="timer"></div>
   </div>
@@ -78,7 +76,6 @@
 
 <div class="wrap">
 
-<!-- START -->
 <section id="step0">
   <div class="card">
     <h1>Тест по английскому языку</h1>
@@ -87,37 +84,35 @@
     <ol>
       <li><b>Грамматика и лексика</b> — около 10 минут</li>
       <li><b>Чтение</b> — около 15 минут</li>
-      <li><b>Устная речь</b> — около 13 минут (нужен микрофон, ответы записываются)</li>
+      <li><b>Устная речь</b> — около 13 минут, вместе с учителем</li>
     </ol>
     <div class="instr">
       Выполняй задания самостоятельно, без словарей, переводчиков и подсказок — так мы поймём, над чем работать.
-      Ответы сохраняются автоматически. Если страница случайно закроется, просто открой ссылку снова.
+      Ответы сохраняются автоматически: если страница случайно закроется, просто открой ссылку снова.
     </div>
     <h3>Как тебя зовут?</h3>
-    <input type="text" class="name" id="name" placeholder="Имя и фамилия" autocomplete="name">
+    <input type="text" class="name" id="name" placeholder="Имя" autocomplete="off">
     <p><button class="btn" id="startBtn">Начать тест</button></p>
   </div>
 </section>
 
-<!-- GRAMMAR -->
 <section id="step1" class="hidden">
   <div class="card">
     <h2>Часть 1. Грамматика и лексика</h2>
     <h3>Задания 1–9</h3>
-    <p class="instr">Прочитай текст. Преобразуй слова, данные заглавными буквами, так, чтобы они грамматически соответствовали содержанию текста. Впиши полученные слова в пропуски.</p>
+    <p class="instr">Прочитай текст. Выбери форму слова, данного заглавными буквами, которая грамматически подходит в пропуск.</p>
     <h3 style="text-align:center">My Best Summer</h3>
     <div id="grammarList"></div>
   </div>
   <div class="card">
     <h3 style="margin-top:4px">Задания 10–15</h3>
-    <p class="instr">Прочитай текст. Образуй от слов, данных заглавными буквами, однокоренные слова так, чтобы они грамматически и лексически соответствовали содержанию текста. Впиши полученные слова в пропуски.</p>
+    <p class="instr">Прочитай текст. Выбери однокоренное слово, образованное от слова заглавными буквами, которое грамматически и по смыслу подходит в пропуск.</p>
     <h3 style="text-align:center">School Clubs</h3>
     <div id="wordList"></div>
   </div>
   <div class="nav"><span></span><button class="btn" data-go="2">Дальше: Чтение →</button></div>
 </section>
 
-<!-- READING -->
 <section id="step2" class="hidden">
   <div class="card">
     <h2>Часть 2. Чтение</h2>
@@ -142,86 +137,67 @@
   <div class="nav"><button class="btn secondary" data-go="1">← Назад</button><button class="btn" data-go="3">Дальше: Речь →</button></div>
 </section>
 
-<!-- SPEAKING -->
 <section id="step3" class="hidden">
   <div class="card">
     <h2>Часть 3. Устная речь</h2>
-    <div class="instr">
-      Каждое задание записывается на микрофон. Когда нажмёшь «Начать», браузер спросит разрешение на микрофон — нажми «Разрешить».
-      Запись можно сделать <b>только один раз</b>, как на экзамене. Сразу после записи нажми <b>«Отправить запись»</b> и отправь файл учителю.
-    </div>
-    <p class="muted" id="micWarn"></p>
+    <div class="instr">Эту часть ты выполняешь вместе с учителем. Начинай каждое задание, только когда учитель скажет.</div>
   </div>
 
-  <div class="card" id="t24">
+  <div class="card">
     <h3 style="margin-top:4px"><span class="num">24</span>Чтение вслух</h3>
-    <p class="instr">Ты готовишь проект о здоровом образе жизни и хочешь прочитать одноклассникам текст. У тебя будет <b>1,5 минуты</b>, чтобы прочитать текст про себя, затем начнётся запись — прочитай текст вслух. На чтение не более <b>2 минут</b>.</p>
+    <p class="instr">Ты готовишь проект о здоровом образе жизни и хочешь прочитать одноклассникам текст. У тебя будет <b>1,5 минуты</b>, чтобы прочитать текст про себя, затем прочитай его вслух. На чтение не более <b>2 минут</b>.</p>
     <div class="speak-box" data-task="24"></div>
   </div>
 
-  <div class="card" id="t25">
+  <div class="card">
     <h3 style="margin-top:4px"><span class="num">25</span>Условный диалог-расспрос</h3>
-    <p class="instr">Ты участвуешь в опросе о том, как подростки проводят свободное время. Тебе нужно ответить на <b>6 вопросов</b>. Давай полный ответ на каждый вопрос (2–3 предложения). На каждый ответ — до <b>40 секунд</b>. Запись идёт непрерывно, вопросы появляются по очереди.</p>
-    <div class="speak-box" data-task="25"></div>
+    <p class="instr">Ты участвуешь в опросе о том, как подростки проводят свободное время. Учитель задаст тебе <b>6 вопросов</b>. Давай полный ответ на каждый вопрос (2–3 предложения). На каждый ответ — до <b>40 секунд</b>.</p>
   </div>
 
-  <div class="card" id="t26">
+  <div class="card">
     <h3 style="margin-top:4px"><span class="num">26</span>Монологическое высказывание</h3>
     <p class="instr">Ты будешь говорить на тему «Изучение иностранных языков». У тебя будет <b>1,5 минуты</b> на подготовку и не более <b>2 минут</b> на ответ. Высказывание должно состоять из 10–12 предложений.</p>
     <div class="speak-box" data-task="26"></div>
   </div>
 
-  <div class="nav"><button class="btn secondary" data-go="2">← Назад</button><button class="btn" data-go="4">Дальше: Финиш →</button></div>
+  <div class="nav"><button class="btn secondary" data-go="2">← Назад</button><button class="btn" data-go="4">Дальше: Результат →</button></div>
 </section>
 
-<!-- FINISH -->
 <section id="step4" class="hidden">
   <div class="card" id="preFinish">
     <h2>Завершение теста</h2>
     <div id="missing"></div>
-    <p>После завершения ответы изменить будет нельзя.</p>
-    <button class="btn green" id="finishBtn">Завершить тест</button>
+    <p>После завершения ответы изменить будет нельзя, и ты сразу увидишь свой результат.</p>
+    <button class="btn green" id="finishBtn">Завершить и узнать результат</button>
   </div>
-  <div class="card hidden" id="postFinish">
-    <h2>Готово! 🎉</h2>
-    <p><b>Последний шаг:</b> отправь свои ответы учителю — выбери удобный способ.</p>
-    <p>
-      <button class="btn" id="shareBtn">Отправить ответы</button>
-      <a class="btn" id="tgBtn" target="_blank" rel="noopener">Telegram</a>
-      <a class="btn green" id="waBtn" target="_blank" rel="noopener">WhatsApp</a>
-      <button class="btn secondary" id="copyBtn">Скопировать</button>
-    </p>
-    <p class="muted" id="copyMsg"></p>
-    <textarea class="summary" id="summary" readonly></textarea>
-    <div id="recReminder"></div>
-  </div>
+  <div id="results" class="hidden"></div>
 </section>
 
 </div>
 
 <script>
 (function () {
-  const STORE = 'oge_diag_v1';
+  const STORE = 'oge_diag_v2';
   const TEST_MIN = 40;
 
   const GRAMMAR = [
-    [1, 'Last summer my family and I', 'to the seaside.', 'GO'],
-    [2, 'It was the', 'holiday I have ever had.', 'GOOD'],
-    [3, 'We stayed in a small hotel which', 'more than a hundred years ago.', 'BUILD'],
-    [4, 'Every morning my sister and I', 'in the sea before breakfast.', 'SWIM'],
-    [5, 'There were always a lot of', 'on the beach, and we quickly made friends with some of them.', 'CHILD'],
-    [6, 'One day, while we', 'along the beach, we saw a dolphin!', 'WALK'],
-    [7, "My dad wanted to take a photo, but he couldn't find", 'camera.', 'HE'],
-    [8, 'Now Dad says that next summer we', 'this place again.', 'VISIT'],
-    [9, 'If the weather', 'good, we will stay there for two weeks.', 'BE']
+    [1, 'Last summer my family and I', 'to the seaside.', 'GO', ['go', 'gone', 'went', 'has gone']],
+    [2, 'It was the', 'holiday I have ever had.', 'GOOD', ['better', 'best', 'goodest', 'most good']],
+    [3, 'We stayed in a small hotel which', 'more than a hundred years ago.', 'BUILD', ['built', 'is built', 'has built', 'was built']],
+    [4, 'Every morning my sister and I', 'in the sea before breakfast.', 'SWIM', ['swam', 'swum', 'swimmed', 'swimming']],
+    [5, 'There were always a lot of', 'on the beach, and we quickly made friends with some of them.', 'CHILD', ['childs', 'childrens', 'children', 'child']],
+    [6, 'One day, while we', 'along the beach, we saw a dolphin!', 'WALK', ['walked', 'were walking', 'are walking', 'have walked']],
+    [7, "My dad wanted to take a photo, but he couldn't find", 'camera.', 'HE', ['him', 'he', 'himself', 'his']],
+    [8, 'Now Dad says that next summer we', 'this place again.', 'VISIT', ['will visit', 'visited', 'have visited', 'visiting']],
+    [9, 'If the weather', 'good, we will stay there for two weeks.', 'BE', ['will be', 'is', 'was', 'be']]
   ];
   const WORDS = [
-    [10, 'Our school offers a lot of clubs for students, and they are a', 'way to spend free time.', 'WONDER'],
-    [11, 'Every year the drama club prepares a big', 'for parents and teachers.', 'PERFORM'],
-    [12, 'There is also a club for young', 'who like doing experiments.', 'SCIENCE'],
-    [13, 'Last year its members won a prize at an', 'competition.', 'NATION'],
-    [14, 'Some students say it is', 'to find time for clubs because they have too much homework.', 'POSSIBLE'],
-    [15, 'But the teachers plan the timetable', ', so everyone can join at least one club.', 'CAREFUL']
+    [10, 'Our school offers a lot of clubs for students, and they are a', 'way to spend free time.', 'WONDER', ['wonderfully', 'wondering', 'wonderful', 'wonders']],
+    [11, 'Every year the drama club prepares a big', 'for parents and teachers.', 'PERFORM', ['performance', 'performer', 'performing', 'performed']],
+    [12, 'There is also a club for young', 'who like doing experiments.', 'SCIENCE', ['scientific', 'scientist', 'sciences', 'scientists']],
+    [13, 'Last year its members won a prize at an', 'competition.', 'NATION', ['national', 'international', 'nationality', 'nationally']],
+    [14, 'Some students say it is', 'to find time for clubs because they have too much homework.', 'POSSIBLE', ['possibly', 'possibility', 'impossible', 'unpossible']],
+    [15, 'But the teachers plan the timetable', ', so everyone can join at least one club.', 'CAREFUL', ['careless', 'carefully', 'careful', 'carefulness']]
   ];
   const HEADINGS = ['A hobby that helps the planet', 'Learning from your mistakes', 'A family tradition', 'Free time without screens', 'A hobby that became a job', 'Making friends online', 'Sport for everybody'];
   const TEXTS = [
@@ -245,42 +221,45 @@
     '<p>Scientists say that teenagers need between eight and ten hours of sleep every night. However, most of them sleep much less. One reason is that a teenager\'s body clock changes: it becomes natural to feel sleepy later in the evening and to wake up later in the morning. Unfortunately, school usually starts early, so many students feel tired during the first lessons.</p>' +
     '<p>Lack of sleep can cause serious problems. It makes it harder to concentrate, remember new information and control emotions. It can even weaken the immune system, so people who don\'t sleep enough catch colds more often.</p>' +
     '<p>Doctors give some simple advice. Try to go to bed at the same time every day, even at weekends. Turn off your phone at least an hour before sleep, because the bright light from the screen tells your brain that it is still daytime.</p>';
-  const QUESTIONS = [
-    'What do you usually do in your free time?',
-    'How much time do you spend online every day?',
-    'Do you prefer spending your free time alone or with friends? Why?',
-    'What new hobby would you like to try in the future?',
-    'How do you think teenagers should relax after school?',
-    'What advice would you give to a student who has no free time at all?'
-  ];
   const MONOLOGUE = '<p><b>Give a talk about learning foreign languages.</b></p><p>Remember to say:</p><ul>' +
     '<li>why people learn foreign languages;</li>' +
     '<li>which foreign language (besides English) you would like to learn and why;</li>' +
     '<li>how, in your opinion, a foreign language should be learnt.</li></ul><p>You have to talk continuously.</p>';
+  const K = 'FhtSfVMIVC8IV1duXRAHak8DAS4UQQJ6QRtSf1MIVC8MSgMuBFsaLE8VAT1FEEx6Hk5CIVMeVClYGxluElofNAlLRiJTHlQpWxsZbgZXBD1NTkIgGlsYP08VAT1GEEx6BVBQbl0QB2BPAwE7GF4aeBtQUCUFEFp6HAABdlNbBXpBG1J9QRBMehpWTSgUQBAtARsPbgADR3pXG1MpA1QZKgBYTS8UEFp6HAgRbksQBTsEXE04GEECK08VAT1AAVRiT1BNOBRAGDkZUEwiEF5UdE9IEnhTCFQxAElMPwJbFDQIGw9uAANDelcbQC0DVxAtAVVabl0QGxlPAwF5Ux5UNS8bGW5FEFp6AHoBdlMBVHRPVGduSxBHekEbTglTCFRvTxUBITcQTHpfGw9uAANBelcbZS0dQRN6QRtSfUkQTHo5S1YpUx5UKVwAAXZTZgQtCBsPbgAARnpXG20jBRIFLAxNRihTHlQpXwgBdlN0FzQeXAFgU0NEak8DAQIeRlYrGVhXKRUQWnocCxBuSxAiKhhcATE=';
+  const keyData = () => {
+    const b = atob(K), p = 'm9#Lq2vX'; let s = '';
+    for (let i = 0; i < b.length; i++) s += String.fromCharCode(b.charCodeAt(i) ^ p.charCodeAt(i % p.length));
+    return JSON.parse(s);
+  };
 
-  let state = { name: '', startedAt: null, finishedAt: null, step: 0, a: {}, rec: {} };
+  let state = { name: '', startedAt: null, finishedAt: null, step: 0, a: {} };
   try { const s = JSON.parse(localStorage.getItem(STORE)); if (s) state = Object.assign(state, s); } catch (e) {}
   const save = () => { try { localStorage.setItem(STORE, JSON.stringify(state)); } catch (e) {} };
   const $ = (id) => document.getElementById(id);
   const esc = (s) => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
-  function gapItem([n, before, after, word]) {
-    return `<div class="item"><span class="num">${n}</span>${esc(before)} <input type="text" data-k="q${n}" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false"> ${esc(after)}<span class="base">${word}</span></div>`;
-  }
+  const chips = (k, values) => '<div class="chips">' +
+    values.map(v => `<label><input type="radio" name="${k}" data-k="${k}" value="${esc(v)}"><span>${esc(v)}</span></label>`).join('') + '</div>';
+
+  const gapItem = ([n, before, after, word, options]) =>
+    `<div class="item"><span class="num">${n}</span>${esc(before)} <span class="blank" id="blank_q${n}">&nbsp;</span> ${esc(after)}<span class="base">${word}</span>${chips('q' + n, options)}</div>`;
+
   $('grammarList').innerHTML = GRAMMAR.map(gapItem).join('');
   $('wordList').innerHTML = WORDS.map(gapItem).join('');
   $('headings').innerHTML = HEADINGS.map((h, i) => `<li><b>${i + 1}.</b> ${esc(h)}</li>`).join('');
   const opts = '<option value="">— выбери заголовок —</option>' + HEADINGS.map((h, i) => `<option value="${i + 1}">${i + 1}. ${esc(h)}</option>`).join('');
   $('matchTexts').innerHTML = TEXTS.map(([l, t]) => `<div class="rtext"><span class="letter">${l}</span>${esc(t)}<br><select data-k="m${l}">${opts}</select></div>`).join('');
-  $('tfList').innerHTML = STATEMENTS.map(([n, t]) => `<div class="item"><span class="num">${n}</span>${esc(t)}<div class="tf">` +
-    ['True', 'False', 'Not stated'].map(v => `<label><input type="radio" name="tf${n}" data-k="q${n}" value="${v}"><span>${v}</span></label>`).join('') +
-    `</div></div>`).join('');
+  $('tfList').innerHTML = STATEMENTS.map(([n, t]) => `<div class="item"><span class="num">${n}</span>${esc(t)}${chips('q' + n, ['True', 'False', 'Not stated'])}</div>`).join('');
 
+  const fillBlank = (k) => { const b = $('blank_' + k); if (b) b.textContent = state.a[k] || '\u00a0'; };
   document.querySelectorAll('[data-k]').forEach(el => {
     const k = el.dataset.k, v = state.a[k];
     if (el.type === 'radio') el.checked = v === el.value; else if (v != null) el.value = v;
-    const h = () => { if (el.type === 'radio' && !el.checked) return; state.a[k] = el.value.trim(); save(); };
-    el.addEventListener('input', h); el.addEventListener('change', h);
+    fillBlank(k);
+    el.addEventListener('change', () => {
+      if (el.type === 'radio' && !el.checked) return;
+      state.a[k] = el.value; save(); fillBlank(k);
+    });
   });
 
   $('name').value = state.name || '';
@@ -310,190 +289,117 @@
   setInterval(() => {
     const t = $('timer');
     if (!state.startedAt) { t.textContent = ''; return; }
-    const end = state.finishedAt || Date.now();
-    const left = TEST_MIN * 60 - (end - state.startedAt) / 1000;
     if (state.finishedAt) { t.textContent = 'Тест завершён'; t.classList.remove('late'); return; }
+    const left = TEST_MIN * 60 - (Date.now() - state.startedAt) / 1000;
     t.textContent = left > 0 ? '⏱ ' + fmt(left) : '⏱ Время вышло';
     t.classList.toggle('late', left <= 0);
   }, 500);
 
-  // ---------- Speaking ----------
-  const micOK = !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
-  if (!micOK) $('micWarn').innerHTML = '<span class="warn">Этот браузер не умеет записывать звук. Открой ссылку в Safari (iPhone) или Chrome (Android / компьютер). Если не получится — эту часть сделаем вместе на уроке.</span>';
-
-  function pickMime() {
-    const c = ['audio/mp4', 'audio/webm;codecs=opus', 'audio/webm', 'audio/ogg'];
-    for (const m of c) if (MediaRecorder.isTypeSupported && MediaRecorder.isTypeSupported(m)) return m;
-    return '';
-  }
-  const recordings = {};
-
-  function countdown(el, sec, onTick) {
+  // ---------- Speaking timers ----------
+  function countdown(el, sec) {
     return new Promise(resolve => {
       const end = Date.now() + sec * 1000;
       let done = false;
+      el._skip = () => { if (!done) { done = true; resolve(); } };
       const tick = () => {
         if (done) return;
         const left = (end - Date.now()) / 1000;
         el.textContent = fmt(left);
-        if (onTick) onTick(left);
         if (left <= 0) { done = true; resolve(); } else setTimeout(tick, 250);
       };
       tick();
-      el._skip = () => { if (!done) { done = true; resolve(); } };
     });
   }
 
-  function setupTask(box) {
+  document.querySelectorAll('.speak-box').forEach(box => {
     const task = box.dataset.task;
     box.innerHTML = `
-      <div class="startArea"><button class="btn">Начать задание ${task}</button></div>
+      <button class="btn start">Начать подготовку</button>
       <div class="live hidden">
-        <div><span class="phase"></span></div>
+        <div class="phase"></div>
         <div class="count">0:00</div>
-        <div class="content"></div>
-        <button class="btn secondary skip hidden">Готов(а) — начать запись</button>
-        <button class="btn red stop hidden">Закончить</button>
+        <button class="btn secondary skip">Готов(а) раньше</button>
       </div>
-      <div class="result hidden"></div>`;
-    const startBtn = box.querySelector('.startArea button');
-    const live = box.querySelector('.live'), phase = box.querySelector('.phase'), cnt = box.querySelector('.count');
-    const content = box.querySelector('.content'), skip = box.querySelector('.skip'), stop = box.querySelector('.stop'), result = box.querySelector('.result');
-
-    if (state.rec[task] === 'done') {
-      box.querySelector('.startArea').innerHTML = '<p class="ok">✓ Задание уже записано. Если ты ещё не отправил(а) запись учителю — напиши об этом учителю.</p>';
-      return;
-    }
-    if (!micOK) startBtn.disabled = true;
-
-    startBtn.onclick = async () => {
-      let stream;
-      try { stream = await navigator.mediaDevices.getUserMedia({ audio: true }); }
-      catch (e) { box.querySelector('.startArea').insertAdjacentHTML('beforeend', '<p class="warn">Нет доступа к микрофону. Разреши доступ в настройках браузера и обнови страницу.</p>'); return; }
-      box.querySelector('.startArea').classList.add('hidden');
+      <div class="content hidden">${task === '24' ? READ_ALOUD : MONOLOGUE}</div>`;
+    const start = box.querySelector('.start'), live = box.querySelector('.live'), phase = box.querySelector('.phase');
+    const cnt = box.querySelector('.count'), skip = box.querySelector('.skip'), content = box.querySelector('.content');
+    skip.onclick = () => cnt._skip && cnt._skip();
+    start.onclick = async () => {
+      start.classList.add('hidden');
       live.classList.remove('hidden');
-
-      const mime = pickMime();
-      const rec = new MediaRecorder(stream, mime ? { mimeType: mime } : undefined);
-      const chunks = [];
-      rec.ondataavailable = e => { if (e.data && e.data.size) chunks.push(e.data); };
-      const stopped = new Promise(r => rec.onstop = r);
-      let stopRequested = false;
-      stop.onclick = () => { stopRequested = true; cnt._skip && cnt._skip(); };
-
-      const record = async (sec) => {
-        phase.innerHTML = '<span class="rec-dot"></span>Идёт запись';
-        stop.classList.remove('hidden');
-        if (rec.state === 'inactive') rec.start(1000);
-        await countdown(cnt, sec);
-      };
-
-      if (task === '24' || task === '26') {
-        content.innerHTML = task === '24' ? READ_ALOUD : MONOLOGUE;
-        phase.textContent = 'Подготовка (запись ещё не идёт)';
-        skip.classList.remove('hidden');
-        skip.onclick = () => cnt._skip && cnt._skip();
-        await countdown(cnt, 90);
-        skip.classList.add('hidden');
-        await record(120);
-      } else {
-        stop.textContent = 'Закончить задание';
-        for (let i = 0; i < QUESTIONS.length && !stopRequested; i++) {
-          content.innerHTML = `<p class="muted">Вопрос ${i + 1} из ${QUESTIONS.length}</p><div class="question">${esc(QUESTIONS[i])}</div>` +
-            (i < QUESTIONS.length - 1 ? '<button class="btn secondary next">Следующий вопрос →</button>' : '');
-          const nb = content.querySelector('.next');
-          if (nb) nb.onclick = () => cnt._skip && cnt._skip();
-          await record(40);
-        }
-      }
-
-      if (rec.state !== 'inactive') rec.stop();
-      await stopped;
-      stream.getTracks().forEach(t => t.stop());
-      live.classList.add('hidden');
-
-      const type = rec.mimeType || mime || 'audio/webm';
-      const blob = new Blob(chunks, { type });
-      const ext = type.includes('mp4') ? 'm4a' : type.includes('ogg') ? 'ogg' : 'webm';
-      const safeName = (state.name || 'student').replace(/[^\p{L}\p{N}]+/gu, '_');
-      const fileName = `${safeName}_zadanie_${task}.${ext}`;
-      recordings[task] = { blob, fileName };
-      state.rec[task] = 'done'; save();
-
-      const url = URL.createObjectURL(blob);
-      result.classList.remove('hidden');
-      result.innerHTML = `<p class="ok"><b>✓ Запись готова.</b> Теперь отправь её учителю:</p>
-        <audio controls src="${url}"></audio>
-        <p><button class="btn share">Отправить запись</button>
-        <a class="btn secondary" href="${url}" download="${esc(fileName)}">Скачать файл</a></p>
-        <p class="muted">Если кнопка «Отправить» не работает — нажми «Скачать файл» и пришли его учителю в мессенджере.</p>`;
-      result.querySelector('.share').onclick = async () => {
-        const file = new File([blob], fileName, { type });
-        if (navigator.canShare && navigator.canShare({ files: [file] })) {
-          try { await navigator.share({ files: [file], title: fileName }); } catch (e) {}
-        } else {
-          result.querySelector('a[download]').click();
-        }
-      };
+      content.classList.remove('hidden');
+      phase.textContent = 'Подготовка';
+      skip.textContent = 'Готов(а) раньше';
+      await countdown(cnt, 90);
+      phase.textContent = task === '24' ? 'Читай вслух' : 'Говори';
+      skip.textContent = 'Закончил(а)';
+      await countdown(cnt, 120);
+      phase.textContent = 'Время вышло';
+      cnt.textContent = '0:00';
+      skip.classList.add('hidden');
     };
-  }
-  document.querySelectorAll('.speak-box').forEach(setupTask);
+  });
 
-  // ---------- Finish ----------
-  const allKeys = () => [...GRAMMAR, ...WORDS].map(g => 'q' + g[0]).concat(TEXTS.map(t => 'm' + t[0]), STATEMENTS.map(s => 'q' + s[0]));
-
-  function buildSummary() {
-    const a = state.a, v = k => a[k] ? a[k] : '—';
-    const mins = Math.round(((state.finishedAt || Date.now()) - state.startedAt) / 60000);
-    let s = `Тест ОГЭ (диагностика)\nУченик: ${state.name}\nВремя на тест: ${mins} мин\n\n`;
-    s += 'ГРАММАТИКА (1–9)\n' + GRAMMAR.map(g => `${g[0]}) ${v('q' + g[0])}`).join('\n') + '\n\n';
-    s += 'СЛОВООБРАЗОВАНИЕ (10–15)\n' + WORDS.map(g => `${g[0]}) ${v('q' + g[0])}`).join('\n') + '\n\n';
-    s += 'ЧТЕНИЕ 16 (заголовки)\n' + TEXTS.map(t => `${t[0]} – ${v('m' + t[0])}`).join(', ') + '\n\n';
-    s += 'ЧТЕНИЕ 17–23\n' + STATEMENTS.map(st => `${st[0]}) ${v('q' + st[0])}`).join('\n') + '\n\n';
-    s += 'УСТНАЯ ЧАСТЬ\n' + ['24', '25', '26'].map(t => `Задание ${t}: ${state.rec[t] === 'done' ? 'записано' : 'не записано'}`).join('\n');
-    return s;
-  }
+  // ---------- Results ----------
+  const writtenKeys = () => [...GRAMMAR, ...WORDS].map(g => 'q' + g[0]).concat(TEXTS.map(t => 'm' + t[0]), STATEMENTS.map(s => 'q' + s[0]));
 
   function renderFinish() {
-    if (state.finishedAt) return showPost();
-    const miss = allKeys().filter(k => !state.a[k]).map(k => k.startsWith('m') ? '16' + k.slice(1) : k.slice(1));
-    const recMiss = ['24', '25', '26'].filter(t => state.rec[t] !== 'done');
-    let html = '';
-    if (miss.length) html += `<p class="warn">Не отвечены задания: ${miss.join(', ')}.</p>`;
-    if (recMiss.length) html += `<p class="warn">Не записаны устные задания: ${recMiss.join(', ')}.</p>`;
-    if (!html) html = '<p class="ok">Все задания выполнены.</p>';
-    $('missing').innerHTML = html;
+    if (state.finishedAt) return showResults();
+    const miss = writtenKeys().filter(k => !state.a[k]).map(k => k.startsWith('m') ? '16' + k.slice(1) : k.slice(1));
+    $('missing').innerHTML = miss.length
+      ? `<p class="warn">Нет ответа в заданиях: ${miss.join(', ')}.</p>`
+      : '<p class="ok">На все письменные задания есть ответы.</p>';
   }
 
   $('finishBtn').onclick = () => {
     if (!confirm('Точно завершить тест? Ответы нельзя будет изменить.')) return;
     state.finishedAt = Date.now(); save();
-    showPost();
+    showResults();
   };
 
   function lockInputs() {
     document.querySelectorAll('[data-k]').forEach(el => el.disabled = true);
-    document.querySelectorAll('.speak-box .startArea button').forEach(b => b.disabled = true);
   }
 
-  function showPost() {
+  function showResults() {
     lockInputs();
     $('preFinish').classList.add('hidden');
-    $('postFinish').classList.remove('hidden');
-    const text = buildSummary();
-    $('summary').value = text;
-    $('tgBtn').href = 'https://t.me/share/url?url=' + encodeURIComponent('Результаты теста') + '&text=' + encodeURIComponent('\n' + text);
-    $('waBtn').href = 'https://wa.me/?text=' + encodeURIComponent(text);
-    $('shareBtn').classList.toggle('hidden', !navigator.share);
-    $('shareBtn').onclick = async () => { try { await navigator.share({ text }); } catch (e) {} };
-    $('copyBtn').onclick = async () => {
-      try { await navigator.clipboard.writeText(text); }
-      catch (e) { $('summary').select(); document.execCommand('copy'); }
-      $('copyMsg').textContent = 'Скопировано! Вставь текст в сообщение учителю.';
+    const key = keyData(), a = state.a;
+    const mark = (k) => a[k] === key[k];
+    const sections = [
+      ['Грамматика', GRAMMAR.map(g => ['q' + g[0], String(g[0])])],
+      ['Словообразование', WORDS.map(g => ['q' + g[0], String(g[0])])],
+      ['Чтение: заголовки (16)', TEXTS.map(t => ['m' + t[0], '16' + t[0]])],
+      ['Чтение: True / False / Not stated', STATEMENTS.map(s => ['q' + s[0], String(s[0])])]
+    ];
+    let total = 0, max = 0, summary = '', details = '';
+    for (const [title, items] of sections) {
+      const got = items.filter(([k]) => mark(k)).length;
+      total += got; max += items.length;
+      summary += `<tr><td>${title}</td><td><b>${got}</b> / ${items.length}</td></tr>`;
+      details += `<h3>${title}</h3><table class="res"><tr><th>№</th><th>Ответ ученика</th><th>Правильно</th></tr>` +
+        items.map(([k, label]) => {
+          const ok = mark(k);
+          return `<tr><td>${label}</td><td class="${ok ? 'good' : 'bad'}">${ok ? '✓' : '✗'} ${esc(a[k] || '—')}</td><td>${ok ? '' : esc(key[k])}</td></tr>`;
+        }).join('') + '</table>';
+    }
+    const pct = Math.round(total / max * 100);
+    const mins = Math.round((state.finishedAt - state.startedAt) / 60000);
+    $('results').innerHTML = `
+      <div class="card">
+        <h2>Результат: ${esc(state.name)}</h2>
+        <div class="score">${total} / ${max}</div>
+        <p class="muted">Письменная часть · ${pct}% · время: ${mins} мин</p>
+        <table class="res">${summary}</table>
+        <p class="muted">Устную часть (задания 24–26) оценивает учитель.</p>
+      </div>
+      <div class="card">${details}</div>
+      <p class="muted" style="text-align:center"><a href="#" id="resetLink">Пройти тест заново</a></p>`;
+    $('results').classList.remove('hidden');
+    $('resetLink').onclick = (e) => {
+      e.preventDefault();
+      if (confirm('Удалить все ответы и начать заново?')) { localStorage.removeItem(STORE); location.reload(); }
     };
-    const recs = Object.keys(recordings);
-    $('recReminder').innerHTML = recs.length
-      ? '<p class="muted">Не забудь отправить и аудиозаписи устных заданий (кнопки «Отправить запись» в части 3).</p>' : '';
   }
 
   if (state.finishedAt) lockInputs();
